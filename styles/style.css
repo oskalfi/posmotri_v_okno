@@ -9,13 +9,18 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+	display: flex;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
+}
+
+a {
+	text-decoration: none;
 }
 
 h1,
@@ -35,4 +40,218 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  height: 1px;
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+  clip: rect(0 0 0 0); /* это свойство обрезает видимую область до нулевого значения */
+}
+
+.content {
+	display: flex;
+	column-gap: 30px;
+	width: 1140px;
+	height: 534px;
+	margin: auto;
+}
+
+.result {
+	align-self: end;
+}
+
+.result__video-container {
+	position: relative;
+	width: 711px;
+	height: 392px;
+	margin-bottom: 16px;
+}
+
+.result__video {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.search-form {
+	display: flex;
+	column-gap: 40px;
+}
+
+.search-form__fieldset {
+	width: 225px;
+	border: none;
+}
+
+::placeholder {
+	color: rgba(255, 255, 255, .6);
+	font-family: 'Fira Sans Condensed';
+	font-size: 18px;
+}
+
+.search-form__fieldset-title {
+	margin-bottom: 5px;
+	font-weight: normal;
+	font-size: 18px;
+}
+
+.search-form__textfield {
+	width: 100%;
+	border: none;
+	padding: 2px 0;
+	background: transparent;
+}
+
+.search-form__textfield {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	padding: 5px 0 3px 0; /*pixel-perfect*/
+}
+
+.search-form__checkbox-list .search-form__label {
+	border: none;
+}
+
+.search-form__checkbox-list .search-form__label {
+	display: inline-flex;
+	align-items: center;
+	padding: 0;
+}
+
+.search-form__pseudo-checkbox {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	margin-right: 5px;
+	border: 1px solid white;
+	background: transparent;
+}
+
+input[type="checkbox"]:checked + span {
+	outline: 1px solid black;
+	outline-offset: -2px;
+	background: white;
+} /* для чекбокса первый сосед с именем span */
+
+.search-form__checkbox-list .search-form__label-text:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+}
+
+.search-form__submit-button {
+	align-self: flex-end;
+	width: 194px;
+	height: 34px;
+}
+
+.button {
+	border: currentColor solid 1px;
+	color: white;
+	font-family: 'Fira Sans Condensed';
+	font-weight: 700;
+	font-size: 18px;
+	background: transparent;
+}
+
+.button:active {
+	background-color: #545050;
+}
+
+.button:hover {
+	text-decoration: underline;
+}
+
+.content__list {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+	width: 399px;
+	height: 298px;
+	overflow: scroll;
+}
+
+.title {
+	margin-bottom: 26px;
+	font-family: Oswald;
+	font-size: 75px;
+	line-height: 94%;
+	text-transform: uppercase;
+}
+
+.content__list-item {
+	border: 1px solid transparent;
+	border-right: none;
+}
+
+.content__list-item:active {
+	background-color: #545050;
+}
+
+.content__accent {
+	color: #545050;
+}
+
+.content__card-link {
+	display: flex;
+	justify-content: space-between;
+	color: white;
+}
+
+.content__card-link:focus-visible {
+	outline: 1px solid white;
+	outline-offset: -1px;
+}
+
+.content__video-card {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border: 1px solid transparent;
+	border-right: none;
+}
+
+.content__card-link_current {
+	background-color: #545050;
+}
+
+.content__video-card-title {
+	margin-bottom: 6px;
+	font-family: Oswald;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.content__video-card-description {
+	line-height: 90%;
+}
+
+.content__video-card-thumbnail {
+	width: 194px;
+	min-height: 103px;
+}
+
+.more-button {
+	position: relative;
+	top: -1.5px;
+	width: 100%;
+	height: 34px;
+}
+
+input[type="checkbox"]:focus-visible + span {
+	outline: 1px solid white;
+	outline-offset: 1px;
+}
+
+:focus-visible {
+	outline: 1px solid white;
+	outline-offset: 1px;
 }
