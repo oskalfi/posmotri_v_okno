@@ -73,25 +73,30 @@ ol {
 }
 
 .result__video {
-	position: absolute;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	object-position: center;
 }
 
 .search-form {
 	display: flex;
+	justify-content: space-between;
 	column-gap: 40px;
+	width: 711px;
 }
 
 .search-form__fieldset {
-	width: 225px;
 	border: none;
+}
+
+.search-form__fieldset:first-of-type {
+	width: 225px;
 }
 
 ::placeholder {
 	color: rgba(255, 255, 255, .6);
-	font-family: 'Fira Sans Condensed';
+	font-family: 'Fira Sans Condensed', sans-serif;
 	font-size: 18px;
 }
 
@@ -104,23 +109,25 @@ ol {
 .search-form__textfield {
 	width: 100%;
 	border: none;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
 	padding: 2px 0;
+	padding: 5px 0 3px 0; /*pixel-perfect*/
+	color: white;
+	font-family: 'Fira Sans Condensed';
+	font-size: 18px;
 	background: transparent;
 }
 
-.search-form__textfield {
-	border-top: 1px solid white;
-	border-bottom: 1px solid white;
-	padding: 5px 0 3px 0; /*pixel-perfect*/
-}
-
-.search-form__checkbox-list .search-form__label {
-	border: none;
+.search-form__checkbox-list {
+	display: flex;
+	column-gap: 15px;
 }
 
 .search-form__checkbox-list .search-form__label {
 	display: inline-flex;
 	align-items: center;
+	border: none;
 	padding: 0;
 }
 
@@ -153,7 +160,7 @@ input[type="checkbox"]:checked + span {
 .button {
 	border: currentColor solid 1px;
 	color: white;
-	font-family: 'Fira Sans Condensed';
+	font-family: 'Fira Sans Condensed', sans-serif;
 	font-weight: 700;
 	font-size: 18px;
 	background: transparent;
@@ -171,15 +178,18 @@ input[type="checkbox"]:checked + span {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	row-gap: 30px;
 	width: 399px;
 	height: 298px;
 	overflow: scroll;
+	overflow-x: hidden;
+}
+.content__list-item:not(:last-child) {
+	margin-bottom: 30px;
 }
 
 .title {
-	margin-bottom: 26px;
-	font-family: Oswald;
+	margin-bottom: 22px;
+	font-family: Oswald, sans-serif;
 	font-size: 75px;
 	line-height: 94%;
 	text-transform: uppercase;
@@ -223,10 +233,10 @@ input[type="checkbox"]:checked + span {
 
 .content__video-card-title {
 	margin-bottom: 6px;
-	font-family: Oswald;
+	font-family: Oswald, sans-serif;
 	font-weight: 700;
 	font-size: 30px;
-	line-height: 1em;
+	line-height: 100%;
 	text-transform: uppercase;
 }
 
@@ -236,7 +246,9 @@ input[type="checkbox"]:checked + span {
 
 .content__video-card-thumbnail {
 	width: 194px;
-	min-height: 103px;
+	min-height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 .more-button {
@@ -246,12 +258,22 @@ input[type="checkbox"]:checked + span {
 	height: 34px;
 }
 
-input[type="checkbox"]:focus-visible + span {
+:focus-visible {
 	outline: 1px solid white;
 	outline-offset: 1px;
 }
 
-:focus-visible {
+.search-form__label:focus-within {
 	outline: 1px solid white;
+	outline: none;
 	outline-offset: 1px;
+}
+
+.search-form__checkbox-list .search-form__label:hover {
+	cursor: pointer;
+}
+
+.content__list-item:hover {
+	outline-offset: 5px;
+	text-decoration: underline;
 }
