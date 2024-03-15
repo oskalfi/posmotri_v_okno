@@ -12,7 +12,7 @@ html {
 	display: flex;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   inline-size: 1200px;
@@ -96,7 +96,7 @@ ol {
 
 ::placeholder {
 	color: rgba(255, 255, 255, .6);
-	font-family: 'Fira Sans Condensed', sans-serif;
+	font-family: 'Fira Sans Condensed', Arial, sans-serif;
 	font-size: 18px;
 }
 
@@ -114,7 +114,7 @@ ol {
 	padding: 2px 0;
 	padding: 5px 0 3px 0; /*pixel-perfect*/
 	color: white;
-	font-family: 'Fira Sans Condensed';
+	font-family: 'Fira Sans Condensed', Arial, sans-serif;
 	font-size: 18px;
 	background: transparent;
 }
@@ -160,7 +160,7 @@ input[type="checkbox"]:checked + span {
 .button {
 	border: currentColor solid 1px;
 	color: white;
-	font-family: 'Fira Sans Condensed', sans-serif;
+	font-family: 'Fira Sans Condensed', Arial, sans-serif;
 	font-weight: 700;
 	font-size: 18px;
 	background: transparent;
@@ -189,7 +189,7 @@ input[type="checkbox"]:checked + span {
 
 .title {
 	margin-bottom: 22px;
-	font-family: Oswald, sans-serif;
+	font-family: Oswald, Arial, sans-serif;
 	font-size: 75px;
 	line-height: 94%;
 	text-transform: uppercase;
@@ -233,7 +233,7 @@ input[type="checkbox"]:checked + span {
 
 .content__video-card-title {
 	margin-bottom: 6px;
-	font-family: Oswald, sans-serif;
+	font-family: Oswald, Arial, sans-serif;
 	font-weight: 700;
 	font-size: 30px;
 	line-height: 100%;
@@ -265,12 +265,12 @@ input[type="checkbox"]:checked + span {
 
 .search-form__label:focus-within {
 	outline: 1px solid white;
-	outline: none;
 	outline-offset: 1px;
 }
 
 .search-form__checkbox-list .search-form__label:hover {
 	cursor: pointer;
+	text-decoration: underline;
 }
 
 .content__list-item:hover {
